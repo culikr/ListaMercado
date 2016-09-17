@@ -1,4 +1,4 @@
-//
+		//
 //  MercadosTableViewController.swift
 //  Lista de Mercados
 //
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MercadosTableViewController: UITableViewController {
+class MercadosTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
+    var detailViewController : MercadoDetailViewController? = nil
     // MARK: Model
     let mercados = [
        
@@ -19,9 +20,21 @@ class MercadosTableViewController: UITableViewController {
         (segmento:"mercado",nome:"BIG",numlojas:1),
         ]
 
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+    
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.splitViewController?.delegate = self
+        
+       /* if let split = splitViewController {
+            let controllers = split.viewControllers
+            detailViewController =
+                controllers[controllers.count-1].navigationController
+                as? MercadoDetailViewController
+        }*/
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
