@@ -12,10 +12,11 @@ class MercadosTableViewController: UITableViewController {
     
     // MARK: Model
     let mercados = [
-        (nome:"Zafari",numlojas:1),
-        (nome:"Nacional",numlojas:1),
-        (nome:"Rissul",numlojas:1),
-        (nome:"BIG",numlojas:1),
+       
+        (segmento:"mercado",nome:"Zafari",numlojas:1),
+        (segmento:"loja",nome:"Nacional",numlojas:1),
+        (segmento:"loja",nome:"Rissul",numlojas:1),
+        (segmento:"mercado",nome:"BIG",numlojas:1),
         ]
 
     override func viewDidLoad() {
@@ -45,9 +46,14 @@ class MercadosTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-
+         let (segmento,nome,numloja) = mercados[indexPath.row]
         // Configure the cell...
-        cell.textLabel?.text = mercados[indexPath.row].nome
+        //cell.textLabel?.text = mercados[indexPath.row].nome
+        if let celula = cell as? MercadoTableViewCell {
+            
+            celula.configure(segmento,nome,numloja)
+            
+        }
 
         return cell
     }
@@ -88,14 +94,28 @@ class MercadosTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier=="mostraDetalhe"{
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let (segmento,nome,numloja) = mercados[indexPath.row]
+                if let navcon = segue.destinationViewController as? UINavigationController {
+                if let destino = navcon.visibleViewController as? MercadoDetailViewController {
+                    destino.numloja = numloja
+                    destino.segmento = segmento
+                    destino.nome = nome
+                    }
+                }
+                
+            }
+        }
+        
     }
-    */
+    
 
 }
