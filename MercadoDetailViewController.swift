@@ -15,28 +15,32 @@ class MercadoDetailViewController: UIViewController {
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var lojaLabel: UILabel!
+    var carr:Int = 0
     var numloja:Int? {
         didSet {
             updateUi()
         }
     }
-
+    
    
-    var nome:String? {
+    var nome:String?{
         didSet {
             updateUi()
         }
     }
 
-    var segmento: String? {
+
+    var segmento: String?{
         didSet {
             updateUi()
         }
     }
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        carr = 1
         updateUi()
         // Do any additional setup after loading the view.
     }
@@ -58,12 +62,12 @@ class MercadoDetailViewController: UIViewController {
     */
    func updateUi()
    {
-    	
-    nomeLabel.text=nome
-    segmentoLabel.text=segmento
-    lojaLabel.text=nome
+    if carr == 1 {
+    nomeLabel.text!=nome ?? " "
+    segmentoLabel.text!=segmento ?? " "
+    lojaLabel.text!=String(numloja )
     }
-    
+    }
     
     
 }

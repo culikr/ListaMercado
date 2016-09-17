@@ -109,6 +109,7 @@ class MercadosTableViewController: UITableViewController {
                     destino.numloja = numloja
                     destino.segmento = segmento
                     destino.nome = nome
+                    destino.updateUi()
                     }
                 }
                 
