@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C27191D11D8D85F600CF6CDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27191D01D8D85F600CF6CDC /* AppDelegate.swift */; };
-		C27191D31D8D85F600CF6CDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27191D21D8D85F600CF6CDC /* ViewController.swift */; };
 		C27191D61D8D85F600CF6CDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27191D41D8D85F600CF6CDC /* Main.storyboard */; };
 		C27191D91D8D85F600CF6CDC /* Lista_de_Mercados.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C27191D71D8D85F600CF6CDC /* Lista_de_Mercados.xcdatamodeld */; };
 		C27191DB1D8D85F600CF6CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27191DA1D8D85F600CF6CDC /* Assets.xcassets */; };
 		C27191DE1D8D85F600CF6CDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27191DC1D8D85F600CF6CDC /* LaunchScreen.storyboard */; };
+		C27191E91D8D8A2C00CF6CDC /* MercadosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27191E81D8D8A2C00CF6CDC /* MercadosTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C27191CD1D8D85F600CF6CDC /* Lista de Mercados.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lista de Mercados.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27191D01D8D85F600CF6CDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C27191D21D8D85F600CF6CDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C27191D51D8D85F600CF6CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C27191D81D8D85F600CF6CDC /* Lista_de_Mercados.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lista_de_Mercados.xcdatamodel; sourceTree = "<group>"; };
 		C27191DA1D8D85F600CF6CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C27191DD1D8D85F600CF6CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C27191DF1D8D85F600CF6CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27191E81D8D8A2C00CF6CDC /* MercadosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercadosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		C27191CF1D8D85F600CF6CDC /* Lista de Mercados */ = {
 			isa = PBXGroup;
 			children = (
+				C27191EA1D8D8A6300CF6CDC /* MercadosControler */,
+				C27191E61D8D864500CF6CDC /* View */,
+				C27191E51D8D860500CF6CDC /* Supporte */,
+				C27191E71D8D866100CF6CDC /* DataModel */,
+			);
+			path = "Lista de Mercados";
+			sourceTree = "<group>";
+		};
+		C27191E51D8D860500CF6CDC /* Supporte */ = {
+			isa = PBXGroup;
+			children = (
 				C27191D01D8D85F600CF6CDC /* AppDelegate.swift */,
-				C27191D21D8D85F600CF6CDC /* ViewController.swift */,
-				C27191D41D8D85F600CF6CDC /* Main.storyboard */,
 				C27191DA1D8D85F600CF6CDC /* Assets.xcassets */,
 				C27191DC1D8D85F600CF6CDC /* LaunchScreen.storyboard */,
 				C27191DF1D8D85F600CF6CDC /* Info.plist */,
+			);
+			name = Supporte;
+			sourceTree = "<group>";
+		};
+		C27191E61D8D864500CF6CDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C27191D41D8D85F600CF6CDC /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C27191E71D8D866100CF6CDC /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
 				C27191D71D8D85F600CF6CDC /* Lista_de_Mercados.xcdatamodeld */,
 			);
-			path = "Lista de Mercados";
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		C27191EA1D8D8A6300CF6CDC /* MercadosControler */ = {
+			isa = PBXGroup;
+			children = (
+				C27191E81D8D8A2C00CF6CDC /* MercadosTableViewController.swift */,
+			);
+			name = MercadosControler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C27191D31D8D85F600CF6CDC /* ViewController.swift in Sources */,
 				C27191D11D8D85F600CF6CDC /* AppDelegate.swift in Sources */,
 				C27191D91D8D85F600CF6CDC /* Lista_de_Mercados.xcdatamodeld in Sources */,
+				C27191E91D8D8A2C00CF6CDC /* MercadosTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
