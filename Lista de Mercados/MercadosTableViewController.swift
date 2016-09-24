@@ -20,7 +20,7 @@ class MercadosTableViewController: UITableViewController, UISplitViewControllerD
         (segmento:"mercado",nome:"BIG",numlojas:1),
         ]
 
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
     
         return true
     }
@@ -46,20 +46,20 @@ class MercadosTableViewController: UITableViewController, UISplitViewControllerD
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return mercados.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-         let (segmento,nome,numloja) = mercados[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+         let (segmento,nome,numloja) = mercados[(indexPath as NSIndexPath).row]
         // Configure the cell...
         //cell.textLabel?.text = mercados[indexPath.row].nome
         if let celula = cell as? MercadoTableViewCell {
@@ -111,13 +111,13 @@ class MercadosTableViewController: UITableViewController, UISplitViewControllerD
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier=="mostraDetalhe"{
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let (segmento,nome,numloja) = mercados[indexPath.row]
-                if let navcon = segue.destinationViewController as? UINavigationController {
+                let (segmento,nome,numloja) = mercados[(indexPath as NSIndexPath).row]
+                if let navcon = segue.destination as? UINavigationController {
                 if let destino = navcon.visibleViewController as? MercadoDetailViewController {
                     destino.numloja = numloja
                     destino.segmento = segmento

@@ -65,7 +65,7 @@ class MercadoDetailViewController: UIViewController {
     if carr == 1 {
     nomeLabel.text!=nome ?? " "
     segmentoLabel.text!=segmento ?? " "
-    lojaLabel.text!=String(numloja )
+    lojaLabel.text!=String(describing: numloja )
     }
     }
     

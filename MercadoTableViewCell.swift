@@ -19,12 +19,12 @@ class MercadoTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    func configure( segmento:String,_ nome:String,_ numloja:Int){
+    func configure( _ segmento:String,_ nome:String,_ numloja:Int){
         self.segmento.text = segmento
         self.nome.text=nome
         self.numloja.text = "\(numloja)"
